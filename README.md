@@ -2,7 +2,7 @@
 
 This project is based on this GitHub Project [https://github.com/jishi/node-sonos-http-api](https://github.com/jishi/node-sonos-http-api)
 
-It creates a container based on the latest sources of the mentioned Git Hub Project.
+It creates a container based on the latest sources of the mentioned Git Hub Project. Dockerfile is based on [https://github.com/mkshb/docker-sonoshttpapi](https://github.com/mkshb/docker-sonoshttpapi).
 
 ## Steps to install this image local
 
@@ -12,9 +12,21 @@ docker build -t oliverscheer/sonos-http-api:latest .
 
 ## Install it with auto restart and detached
 
+Use this when you use Docker for Windows
+
 ``` bash
 docker run --name="sonos-http-api" \
     -p 5005:5005 \
+    --restart="always" \
+    --detach=true \
+    oliverscheer/sonos-http-api:latest
+```
+
+Use this on Real Linux (without Docker for Windows)
+
+``` bash
+docker run --name="sonos-http-api" \
+    --net=host \
     --restart="always" \
     --detach=true \
     oliverscheer/sonos-http-api:latest
@@ -67,3 +79,10 @@ docker run \
     oliverscheer/sonos-http-api:latest \
     /bin/bash
 ```
+
+
+## misc
+
+current image size = 993 MB
+
+mkshb/sonoshttpapi                               latest                  29acea11a3e1        29 minutes ago      129MB
