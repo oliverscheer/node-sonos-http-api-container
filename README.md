@@ -56,3 +56,14 @@ Run before using these scripts:
 chmod +x setup.sh
 chmod +x remove.sh
 ```
+
+## Interactive
+
+``` bash
+docker run \
+    --name="sonos-http-api" \
+    -p 5005:5005 \
+    -it \
+    oliverscheer/sonos-http-api:latest \
+    /bin/bash
+```
