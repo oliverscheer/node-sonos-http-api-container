@@ -25,6 +25,7 @@ docker run --name="sonos-http-api" \
 ``` bash
 # Disable
 docker update --restart=no sonos-http-api
+
 # Always
 docker update --restart=always sonos-http-api
 ```
@@ -34,5 +35,24 @@ docker update --restart=always sonos-http-api
 To remove it from you machine
 
 ``` bash
+# stop container
+docker stop sonos-http-api
 
+#remove container
+docker rm sonos-http-api
+
+# remove image
+docker image rm oliverscheer/sonos-http-api
+```
+
+## Scripts
+
+setup.sh builds and runs the container.\
+remove.sh removes it from the machine.
+
+Run before using these scripts:
+
+``` bash
+chmod +x setup.sh
+chmod +x remove.sh
 ```
