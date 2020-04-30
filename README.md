@@ -20,6 +20,15 @@ docker run --name="sonos-http-api" \
     oliverscheer/sonos-http-api:latest
 ```
 
+## Change autostart
+
+``` bash
+# Disable
+docker update --restart=no sonos-http-api
+# Always
+docker update --restart=always sonos-http-api
+```
+
 ## Uninstall it
 
 To remove it from you machine
